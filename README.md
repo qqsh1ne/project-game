@@ -1,4 +1,4 @@
-# Concept
+# Genre
 Top-down rogue-like game
 
 # Gameplay
