@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SimpleEnemy : Unit
 {
-    public const float VisionRange = 35f;
+    public const float VisionRange = 25f;
     private const float AttackRange = 10f;
     private const float ShootCooldown = 2f;
     private const float DeathDuration = 1.32f;

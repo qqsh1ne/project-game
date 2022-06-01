@@ -11957,7 +11957,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -63194,11 +63194,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2593464980348119127, guid: a6507bd28f309de42a4f99bf4b4749a2, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2593464980348119127, guid: a6507bd28f309de42a4f99bf4b4749a2, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2593464980633767497, guid: a6507bd28f309de42a4f99bf4b4749a2, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2593464980633767497, guid: a6507bd28f309de42a4f99bf4b4749a2, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2593464980633767497, guid: a6507bd28f309de42a4f99bf4b4749a2, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 171.98877
+      objectReference: {fileID: 0}
+    - target: {fileID: 2593464980633767497, guid: a6507bd28f309de42a4f99bf4b4749a2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 154
+      objectReference: {fileID: 0}
+    - target: {fileID: 2593464980633767497, guid: a6507bd28f309de42a4f99bf4b4749a2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -44
       objectReference: {fileID: 0}
     - target: {fileID: 2593464981638971632, guid: a6507bd28f309de42a4f99bf4b4749a2, type: 3}
       propertyPath: m_Name
@@ -63206,7 +63226,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2593464981638971632, guid: a6507bd28f309de42a4f99bf4b4749a2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2593464981638971636, guid: a6507bd28f309de42a4f99bf4b4749a2, type: 3}
       propertyPath: m_Pivot.x
