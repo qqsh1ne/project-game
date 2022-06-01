@@ -1,18 +1,17 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class SimpleEnemy : Unit
 {
-    private const float AttackRange = 10f;
-    
+    private const float AttackRange = 15f;
+    private const float VisionRange = 45f;
     private const float ShootCooldown = 2f;
     private const float DeathDuration = 1.32f;
+    private const int Damage = 15;
 
     [SerializeField] public new Transform transform;
     [SerializeField] public Animator animator;
     [SerializeField] public Rigidbody2D rigidBody;
 
-    [SerializeField] private int damage;
     [SerializeField] private Bullet bullet;
     [SerializeField] private Player player;
     [SerializeField] private int health;
@@ -21,11 +20,12 @@ public class SimpleEnemy : Unit
     public bool canShoot = true;
 
     private void Start() => sprite = GetComponentInChildren<SpriteRenderer>();
-
+    
     private void Update()
     {
         if (animator.GetBool("IsDead"))
             return;
+        
         
         if ((player.transform.position - transform.position).magnitude < AttackRange && canShoot)
             Shoot();
@@ -64,7 +64,7 @@ public class SimpleEnemy : Unit
         
         newBullet.Parent = gameObject;
         newBullet.Direction = target - position;
-        newBullet.Damage = damage;
+        newBullet.Damage = Damage;
         newBullet.transform.rotation =
             Quaternion.LookRotation(Vector3.forward, Vector3.Cross(Vector3.forward, newBullet.Direction));
     }
