@@ -1,9 +1,10 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class SimpleEnemy : Unit
 {
-    private const float AttackRange = 15f;
-    private const float VisionRange = 45f;
+    public const float VisionRange = 35f;
+    private const float AttackRange = 10f;
     private const float ShootCooldown = 2f;
     private const float DeathDuration = 1.32f;
     private const int Damage = 15;
@@ -18,6 +19,7 @@ public class SimpleEnemy : Unit
 
     public SpriteRenderer sprite;
     public bool canShoot = true;
+    public bool isAttacked;
 
     private void Start() => sprite = GetComponentInChildren<SpriteRenderer>();
     
@@ -25,8 +27,7 @@ public class SimpleEnemy : Unit
     {
         if (animator.GetBool("IsDead"))
             return;
-        
-        
+
         if ((player.transform.position - transform.position).magnitude < AttackRange && canShoot)
             Shoot();
     }
@@ -72,6 +73,7 @@ public class SimpleEnemy : Unit
     public override void ReceiveDamage(int damage)
     {
         health -= damage;
+        isAttacked = true;
 
         if (health <= 0)
             Die();
@@ -80,7 +82,7 @@ public class SimpleEnemy : Unit
     protected override void Die()
     {
         animator.SetBool("IsDead", true);
-        animator.SetInteger("State", 3);
+        animator.SetInteger("State", (int) SimpleEnemyState.Death);
         
         Destroy(gameObject, DeathDuration);
     }
