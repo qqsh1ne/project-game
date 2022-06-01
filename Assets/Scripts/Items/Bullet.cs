@@ -4,8 +4,7 @@ public class Bullet : MonoBehaviour
 {
     private const float Velocity = 20f;
     private const float BulletLifeTime = 2.5f;
-
-    private SpriteRenderer _sprite;
+    
     private GameObject _parent;
     private Transform _transform;
 
@@ -15,16 +14,9 @@ public class Bullet : MonoBehaviour
 
     public int Damage { get; set; }
 
-    private void Start()
-    {
-        Destroy(gameObject, BulletLifeTime);
-    }
+    private void Start() => Destroy(gameObject, BulletLifeTime);
 
-    private void Awake()
-    {
-        _sprite = GetComponentInChildren<SpriteRenderer>();
-        _transform = GetComponent<Transform>();
-    }
+    private void Awake() => _transform = GetComponent<Transform>();
 
     private void Update()
     { 
