@@ -1,8 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
+using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
@@ -21,5 +18,9 @@ public class Door : MonoBehaviour
         if (!other.GetComponent<Unit>().CompareTag("Player")) return;
         _isOpening = true;
         animator.SetBool("IsClosed", false);
+        
+        Invoke(nameof(LaunchBossLevel), 5f);
     }
+    
+    private void LaunchBossLevel() => SceneManager.LoadScene (sceneName:"Boss Level");
 }
